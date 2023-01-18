@@ -1,11 +1,15 @@
-import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { fetchMoviesById } from 'Fetch/api';
 import { useEffect, useState } from 'react';
+import BackBtn from 'components/BackBtn/BackBtn';
 import styles from './styles.module.css';
 
 export default function MoviePageDetails() {
   const { movieId } = useParams();
   const [movieItem, setMovieItem] = useState(null);
+
+  const location = useLocation();
+  const backLink = location?.state?.from ?? '/';
 
   const getMovieDetails = async movieId => {
     try {
@@ -22,6 +26,7 @@ export default function MoviePageDetails() {
   return (
     <>
       <div className={styles.container}>
+        <BackBtn location={backLink} />
         <div className={styles.details}>
           <div className={styles.movieList}>
             <img

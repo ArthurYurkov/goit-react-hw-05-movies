@@ -7,11 +7,14 @@ export default function SearchBar({ onChangeQuery }) {
 
   const handleSubmit = e => {
     e.preventDefault();
+    if (search === null) {
+      return;
+    }
     onChangeQuery(search);
   };
 
   const handleInputChange = e => {
-    setSearch(e.target.value);
+    setSearch(e.target.value.trim());
   };
 
   return (
