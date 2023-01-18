@@ -5,7 +5,6 @@ import { Link, useLocation } from 'react-router-dom';
 
 export default function HomePage() {
   const [trendMovie, setTrendMovie] = useState([]);
-  const [error, setError] = useState('');
 
   const location = useLocation();
 
@@ -13,7 +12,7 @@ export default function HomePage() {
     try {
       await fetchTrendingMovies().then(res => setTrendMovie(res));
     } catch (error) {
-      setError(error.message);
+      console.log(error);
     }
   };
 
