@@ -10,35 +10,26 @@ export default function Movies() {
 
   const [searchParams, setSearchParams] = useSearchParams('');
 
+  const currentQuery = searchParams.get('query') ?? '';
   const location = useLocation();
 
-  // const getSearchMovies = async currentQuery => {
-  //   try {
-  //     await fetchSearchMovies(currentQuery).then(res => setMovieList(res));
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const getSearchMovies = async currentQuery => {
+    try {
+      await fetchSearchMovies(currentQuery).then(res => setMovieList(res));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
-    const getSearchMovies = async searchMovie => {
-      try {
-        await fetchSearchMovies(searchMovie).then(res => {
-          if (res.length === 0) {
-            setMovieList([]);
-            return;
-          }
-          setMovieList(res);
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getSearchMovies(searchMovie);
-  }, [searchMovie]);
+    if (currentQuery === '') {
+      return;
+    }
+    getSearchMovies(currentQuery);
+  }, [currentQuery]);
 
   const onQueryChange = newQuery => {
-    if (newQuery === searchParams) {
+    if (newQuery === currentQuery) {
       return alert('This film already found');
     }
     if (newQuery === '') {
@@ -46,7 +37,6 @@ export default function Movies() {
       return;
     }
     setSearchParams({ query: newQuery });
-    setSearchMovie(newQuery);
   };
 
   return (
