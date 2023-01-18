@@ -34,6 +34,7 @@ export default function Cast() {
                         ? `https://image.tmdb.org/t/p/w300${actor.profile_path}`
                         : `https://image.tmdb.org/t/p/w300/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg`
                     }
+                    alt={actor.original_name}
                   />
 
                   <p className={styles.characterName}>

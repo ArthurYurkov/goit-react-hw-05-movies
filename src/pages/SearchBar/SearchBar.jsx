@@ -36,6 +36,6 @@ export default function SearchBar({ onChangeQuery }) {
   );
 }
 
-const propTypes = {
+SearchBar.propTypes = {
   onChangeQuery: PropTypes.func,
 };

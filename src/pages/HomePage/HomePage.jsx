@@ -35,6 +35,7 @@ export default function HomePage() {
               >
                 <img
                   src={`https://image.tmdb.org/t/p/w300${movie.poster_path} `}
+                  alt={movie.title}
                 />
                 <p className={styles.movieTitle}>
                   {movie.title ? movie.title : ' No information'}

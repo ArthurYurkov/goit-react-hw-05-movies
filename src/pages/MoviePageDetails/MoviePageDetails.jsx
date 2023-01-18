@@ -26,6 +26,7 @@ export default function MoviePageDetails() {
           <div className={styles.movieList}>
             <img
               src={`https://image.tmdb.org/t/p/w300${movieItem?.poster_path}`}
+              alt={movieItem?.title}
             />
           </div>
           <div className={styles.movieInfo}>
