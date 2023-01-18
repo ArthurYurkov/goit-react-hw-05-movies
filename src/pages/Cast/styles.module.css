@@ -1,0 +1,51 @@
+.container {
+  margin: 30px 70px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+
+.actorItem {
+  background-color: #d6e4e5;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+  color: #497174;
+  height: 500px;
+  width: 310px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.actorItem img {
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.characterName {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+  font-weight: 400;
+  font-size: 18px;
+  padding-left: 20px;
+  width: 200px;
+  transition: all 400ms;
+  color: #eff5f5;
+  border-radius: 10px;
+  background-color: #eb6440;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.actorName {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
