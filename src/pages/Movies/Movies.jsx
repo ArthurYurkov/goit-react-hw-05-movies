@@ -6,7 +6,6 @@ import styles from './styles.module.css';
 
 export default function Movies() {
   const [movieList, setMovieList] = useState([]);
-  const [searchMovie, setSearchMovie] = useState('');
 
   const [searchParams, setSearchParams] = useSearchParams('');
 
